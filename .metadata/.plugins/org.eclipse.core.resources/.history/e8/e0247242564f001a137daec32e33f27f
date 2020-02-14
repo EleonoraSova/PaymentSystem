@@ -1,0 +1,7 @@
+package lv.eleonora.employee;
+
+import lv.eleonora.paysystem.Payee;
+
+public class SalaryEmployee implements Payee {
+
+}
