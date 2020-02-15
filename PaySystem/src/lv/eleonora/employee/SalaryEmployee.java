@@ -1,35 +1,22 @@
 package lv.eleonora.employee;
 
-import lv.eleonora.paysystem.Payee;
 
-public class SalaryEmployee implements Payee {
-	
-	private String name;
-	private Integer bankAccount;
-	protected double grossWage;
-	
-		public SalaryEmployee(String name, Integer bankAccount, double grossWage) {
-		this.name = name;
-		this.bankAccount = bankAccount;
-		this.grossWage = grossWage;
-	}
 
-	@Override
-	public String name() {
-		return name;
+public class SalaryEmployee extends Employee {
+	
+	public SalaryEmployee(String name, Integer bankAccount, Double grossWage) {
+		super(name, bankAccount, grossWage);
 	}
 
 	@Override
 	public Double grossPayment() {
-		return grossWage;
+		return grossWage + doCurrentBonus;
 	}
 
 	@Override
-	public Integer bankAccount() {
+	public void giveBonus(Double percentage) {
+		currentBonus += grossWage * (percentage/100.00);
 		
-		return bankAccount;
 	}
 	
-	
-
 }
